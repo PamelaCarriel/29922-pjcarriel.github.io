@@ -15,14 +15,14 @@ body {
 
 a {
   text-decoration: none;
-  color: #1ab188;
+  color: #00a859;
   -webkit-transition: .5s ease;
   -o-transition: .5s ease;
   transition: .5s ease;
 }
 
 a:hover {
-  color: #179b76;
+  color: #006633;
 }
 
 .contenedor-formularios {
@@ -64,12 +64,12 @@ a:hover {
 }
 
 .contenedor-tabs li a:hover {
-  background: #179b77;
+  background: #00a859;
   color: #fff;
 }
 
 .contenedor-tabs .active a {
-  background: #1ab188;
+  background: #006633;
   color: #fff;
 }
 
@@ -100,7 +100,7 @@ label {
 
 label .req {
   margin: 2px;
-  color: #1ab188;
+  color: #00a859;
 }
 
 label.active {
@@ -132,16 +132,15 @@ input {
   border-left: none;
   border-right: none;
   color: #fff;
-  border-radius: 0;
+  border-radius: 5px;
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  border-radius: 5px;
 }
 
 input:focus {
   outline: none;
-  border-color: #1ab188;
+  border-color: #00a859;
 }
 
 .contenedor-input {
@@ -172,7 +171,7 @@ input:focus {
   cursor: pointer;
   padding: 15px 0;
   font-size: 2rem;
-  background: #1ab188;
+  background: #006633;
   color: #fff;
   -webkit-transition: all .5s ease;
   -o-transition: all .5s ease;
@@ -180,7 +179,7 @@ input:focus {
 }
 
 .button:hover, .button:focus {
-  background: #179b77;
+  background: #00a859;
 }
 
 .button-block {
@@ -216,7 +215,7 @@ input:focus {
 }
 
 .btn-regresar {
-  background: linear-gradient(135deg, #66ea8e 0%, #4ba257 100%);
+  background: linear-gradient(135deg, #00a859 0%, #006633 100%);
   color: #fff;
   border: none;
   border-radius: 25px;
@@ -229,8 +228,8 @@ input:focus {
 }
 
 .btn-regresar:hover {
-  background: linear-gradient(135deg, #5a6be3 0%, #5b3f8e 100%);
-  box-shadow: 0 8px 18px rgba(118, 75, 162, 0.4);
+  background: linear-gradient(135deg, #00994d 0%, #004d26 100%);
+  box-shadow: 0 8px 18px rgba(0, 150, 57, 0.4);
   transform: translateY(-2px);
 }
 
