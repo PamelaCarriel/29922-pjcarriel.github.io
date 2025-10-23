@@ -76,22 +76,6 @@
         </form>
     </div>
 
-    <!-- 🧩 SCRIPT -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const checkbox = document.getElementById('Basico4');
-            const datosEcon = document.getElementById('Datos_Economicos');
-
-            checkbox.addEventListener('change', function () {
-                if (this.checked) {
-                    datosEcon.classList.remove('hidden');
-                    datosEcon.classList.add('visible');
-                } else {
-                    datosEcon.classList.remove('visible');
-                    datosEcon.classList.add('hidden');
-                }
-            });
-        });
-    </script>
+<script src="js/producto.js"></script>
 </body>
 </html>
