@@ -30,7 +30,7 @@ form {
 h2 {
   text-align: center;
   margin-bottom: 25px;
-  color: #333;
+  color: #006633;
   font-size: 26px;
   letter-spacing: 1px;
 }
@@ -56,14 +56,14 @@ input[type="date"] {
 
 /* ====== EFECTOS FOCUS ====== */
 input:focus {
-  border-color: #667eea;
-  box-shadow: 0 0 8px rgba(102, 126, 234, 0.3);
+  border-color: #00a859;
+  box-shadow: 0 0 8px rgba(0, 168, 89, 0.3);
   outline: none;
 }
 
 /* ====== BOTÓN ====== */
 input[type="submit"] {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #006633 0%, #00a859 100%);
   color: white;
   border: none;
   border-radius: 25px;
@@ -77,7 +77,7 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 15px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 8px 15px rgba(0, 102, 51, 0.3);
 }
 
 input[type="submit"]:active {
@@ -112,6 +112,7 @@ input::placeholder {
     font-size: 22px;
   }
 }
+
 /* ====== MENSAJES DE ERROR ====== */
 .mensaje-error {
   color: #d93025;
@@ -123,41 +124,26 @@ input::placeholder {
   animation: aparecer 0.3s ease;
 }
 
-/* Pequeña animación al mostrar errores */
 @keyframes aparecer {
   from { opacity: 0; transform: translateY(-3px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ====== ENLACE REGRESAR ====== */
 .back-link {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .back-link a {
-    color: #667eea;
-    text-decoration: none;
-    font-weight: 500;
+  color: #006633;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 .back-link a:hover {
-    color: #764ba2;
-    text-decoration: underline;
-}
-/* ====== MENSAJES DE ERROR ====== */
-.mensaje-error {
-  color: #d93025;
-  font-size: 14px;
-  margin-top: -10px;
-  margin-bottom: 15px;
-  display: block;
-  font-weight: 500;
-  animation: aparecer 0.3s ease;
-}
-
-/* ====== ANIMACIÓN ====== */
-@keyframes aparecer {
-  from { opacity: 0; transform: translateY(-4px); }
-  to { opacity: 1; transform: translateY(0); }
+  color: #00a859;
+  text-decoration: underline;
 }
 
 /* ====== BOTÓN REGRESAR ====== */
@@ -166,7 +152,7 @@ input::placeholder {
   width: 100%;
   margin-top: 15px;
   padding: 12px;
-  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  background: linear-gradient(135deg, #00a859 0%, #006633 100%);
   color: #fff;
   border: none;
   border-radius: 25px;
@@ -178,21 +164,22 @@ input::placeholder {
 }
 
 .btn-regresar:hover {
-  background: linear-gradient(135deg, #5b3f8e 0%, #5a6be3 100%);
-  box-shadow: 0 8px 15px rgba(102, 126, 234, 0.3);
+  background: linear-gradient(135deg, #00994d 0%, #005e2b 100%);
+  box-shadow: 0 8px 15px rgba(0, 150, 57, 0.3);
   transform: translateY(-2px);
 }
 
 .btn-regresar:active {
   transform: scale(0.96);
 }
+
 /* ====== BOTÓN ENVIAR (MODERNO) ====== */
 #btnEnviar {
   width: 100%;
   padding: 14px;
   border: none;
   border-radius: 30px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #006633 0%, #00a859 100%);
   color: #fff;
   font-size: 18px;
   font-weight: 600;
@@ -203,26 +190,22 @@ input::placeholder {
   overflow: hidden;
 }
 
-/* Brillo suave al pasar el cursor */
 #btnEnviar:hover {
-  box-shadow: 0 0 12px rgba(118, 75, 162, 0.5);
+  box-shadow: 0 0 12px rgba(0, 168, 89, 0.5);
   transform: translateY(-2px);
 }
 
-/* Cuando se presiona */
 #btnEnviar:active {
   transform: scale(0.97);
 }
 
-/* Estado "enviando" con animación */
 #btnEnviar.enviando {
-  background: linear-gradient(135deg, #5a6be3 0%, #5b3f8e 100%);
+  background: linear-gradient(135deg, #008543 0%, #004d26 100%);
   color: #eee;
   cursor: not-allowed;
   box-shadow: none;
 }
 
-/* Efecto animado tipo spinner */
 #btnEnviar.enviando::after {
   content: "";
   position: absolute;
@@ -237,7 +220,6 @@ input::placeholder {
   animation: girar 1s linear infinite;
 }
 
-/* Animación del spinner */
 @keyframes girar {
   from { transform: translateY(-50%) rotate(0deg); }
   to { transform: translateY(-50%) rotate(360deg); }
