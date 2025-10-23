@@ -29,27 +29,27 @@ body {
 /* ====== TÍTULO ====== */
 h1 {
     text-align: center;
-    color: #333;
+    color: #006633;
     margin-bottom: 25px;
     font-size: 26px;
 }
 
 /* ====== FIELDSETS ====== */
 fieldset {
-    border: 2px solid #667eea;
+    border: 2px solid #006633;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 25px;
-    background: #f9faff;
+    background: #f5fff8;
     transition: all 0.3s ease;
 }
 
 fieldset:hover {
-    box-shadow: 0 0 10px rgba(102, 126, 234, 0.2);
+    box-shadow: 0 0 10px rgba(0, 102, 51, 0.2);
 }
 
 legend {
-    color: #667eea;
+    color: #006633;
     font-weight: 600;
     font-size: 18px;
     padding: 0 10px;
@@ -83,8 +83,8 @@ legend {
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-    border-color: #667eea;
-    box-shadow: 0 0 6px rgba(102, 126, 234, 0.3);
+    border-color: #00a859;
+    box-shadow: 0 0 6px rgba(0, 168, 89, 0.3);
     outline: none;
 }
 
@@ -101,7 +101,7 @@ textarea {
 }
 
 .checkbox-group input {
-    accent-color: #667eea;
+    accent-color: #006633;
 }
 
 /* ====== FILAS Y COLUMNAS ====== */
@@ -121,7 +121,7 @@ textarea {
 
 .input-with-symbol .symbol {
     font-weight: bold;
-    color: #667eea;
+    color: #006633;
     font-size: 18px;
 }
 
@@ -142,11 +142,11 @@ textarea {
 }
 
 .radio-group label:hover {
-    background: rgba(102, 126, 234, 0.1);
+    background: rgba(0, 102, 51, 0.1);
 }
 
 .radio-group input[type="radio"] {
-    accent-color: #667eea;
+    accent-color: #006633;
     margin-right: 8px;
 }
 
@@ -169,13 +169,13 @@ textarea {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #006633 0%, #00a859 100%);
     color: white;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 168, 89, 0.3);
 }
 
 .btn-secondary {
@@ -195,13 +195,13 @@ textarea {
 }
 
 .back-link a {
-    color: #667eea;
+    color: #006633;
     text-decoration: none;
     font-weight: 500;
 }
 
 .back-link a:hover {
-    color: #764ba2;
+    color: #00a859;
     text-decoration: underline;
 }
 
@@ -221,6 +221,7 @@ textarea {
         flex-direction: column;
     }
 }
+
 /* ====== ANIMACIÓN DE APARICIÓN / OCULTAMIENTO ====== */
 .hidden {
     opacity: 0;
@@ -231,7 +232,7 @@ textarea {
 
 .visible {
     opacity: 1;
-    max-height: 600px; /* suficiente para el contenido */
+    max-height: 600px;
     transition: all 0.5s ease;
 }
 .hidden {
