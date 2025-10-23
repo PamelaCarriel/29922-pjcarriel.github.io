@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Contacto PARTE III</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="MisEstilos.css">
+  <script src="validar.js"></script>
+</head>
+
+<body>
+  <form name="FormContacto" onsubmit="return validar();" method="post">
+    <h2>Contacto</h2>
+
+    <p>Correo Electrónico</p>
+    <input type="text" id="txtEmail" name="txtEmail" placeholder="&#9993; usuario@mail.com" required>
+    <small id="errorEmail" class="mensaje-error"></small>
+
+    <p>Fecha de Nacimiento</p>
+    <input type="date" id="txtFecha" name="txtFecha" required>
+    <small id="errorFecha" class="mensaje-error"></small>
+
+    <p>Teléfono</p>
+    <input type="text" id="txtTelefono" name="txtTelefono" placeholder="&#9742; 10 dígitos" required>
+    <small id="errorTelefono" class="mensaje-error"></small>
+
+    <!-- Botón Enviar -->
+    <input type="button" id="btnEnviar" value="Enviar" onclick="enviarFormulario(this)">
+
+    <!-- Botón Regresar -->
+    <button type="button" class="btn-regresar" onclick="window.location.href='../index.html'">
+      ⬅ Regresar al Inicio
+    </button>
+  </form>
+</body>
+</html>

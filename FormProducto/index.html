@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Formulario de Producto</h1>
+
+        <form action="./Script_PHP/guardar.php" method="POST" name="FormProducto" enctype="multipart/form-data">
+
+            <fieldset id="Datos_Basicos">
+                <legend>Datos Básicos</legend>
+                <div class="form-group">
+                    <label for="Basico1">Nombre del Producto</label>
+                    <input id="Basico1" type="text" name="txtNombre" required autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label for="Basico2">Descripción</label>
+                    <textarea id="Basico2" maxlength="50" name="txtaDescripcion" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="Basico3">Foto del Producto</label>
+                    <input id="Basico3" type="file" name="foto" required>
+                </div>
+
+                <div class="checkbox-group">
+                    <input id="Basico4" type="checkbox" name="ckboxLogistica" value="Logistica">
+                    <label for="Basico4">Añadir información confidencial</label>
+                </div>
+            </fieldset>
+
+            <!-- 🔒 DATOS ECONÓMICOS (inicialmente oculto) -->
+            <fieldset id="Datos_Economicos" class="hidden">
+                <legend>Datos Económicos</legend>
+
+                <div class="form-row">
+                    <div class="input-with-symbol">
+                        <label for="Económico1">Precio</label>
+                        <input id="Económico1" type="number" min="100" max="200" required>
+                        <span class="symbol">$</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Económico2">Impuestos</label>
+                        <select name="cmbImpuesto" id="Económico2">
+                            <option value="4">4%</option>
+                            <option value="7">7%</option>
+                            <option value="16">16%</option>
+                            <option value="25">25%</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="radio-group">
+                    <label><input type="radio" name="rbPromocion" value="Ninguno" checked> Ninguno</label>
+                    <label><input type="radio" name="rbPromocion" value="Gratuito"> Transporte gratuito</label>
+                    <label><input type="radio" name="rbPromocion" value="Descuento"> Descuento 5%</label>
+                </div>
+            </fieldset>
+
+            <div class="button-group">
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                <button type="reset" class="btn btn-secondary">Borrar Datos</button>
+            </div>
+
+            <div class="back-link">
+                <a href="../index.html">← Regresar</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- 🧩 SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const checkbox = document.getElementById('Basico4');
+            const datosEcon = document.getElementById('Datos_Economicos');
+
+            checkbox.addEventListener('change', function () {
+                if (this.checked) {
+                    datosEcon.classList.remove('hidden');
+                    datosEcon.classList.add('visible');
+                } else {
+                    datosEcon.classList.remove('visible');
+                    datosEcon.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

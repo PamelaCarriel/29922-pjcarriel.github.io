@@ -1,0 +1,252 @@
+/* =========================
+   ESTILOS COMPLETOS
+   (mismas posiciones/colores/fondos;
+    solo centrado y alineación interna)
+   ========================= */
+
+/* Lienzo centrado (ajustado a 1310px para cuadrar con tus cajas) */
+html, body { height: 100%; }
+
+body{
+  width: 1310px;              /* 50px (left) + 1260px (ancho) = 1310 */
+  margin: 0;                  /* quitamos auto; centramos con transform */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);/* centro exacto sin depender de la barra */
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Titulares y texto tal como lo tenías */
+h2{
+  text-align: center;
+  margin-bottom: 50px;
+  color:#FFF;
+  font-family:Verdana, Geneva, sans-serif;
+  font-size: 30px;
+}
+
+.Texto{
+  text-align: center;
+  color:#000;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 25px;
+}
+
+/* Botón genérico (sin mover cajas) */
+.Boton {
+  background-color: #ffffff;
+  border-width:5px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:10px;
+  color: #0000FF;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+  /* mejora visual sin traslación */
+  transition: box-shadow .2s ease, filter .2s ease;
+}
+.Boton:hover {
+  box-shadow: 0 6px 14px rgba(0,0,0,.15);
+  filter: brightness(1.02);
+}
+
+/* =========================
+   TUS CAJAS ORIGINALES
+   (mismas posiciones y colores)
+   ========================= */
+
+/* HEADER   */
+#header {   
+  position:absolute;
+  left:50px;
+  top:20px;
+  width: 1260px;
+  height:170px;
+  float: none;
+  background:inherit;
+  background-color: rgba(0, 255, 255);
+  box-sizing:border-box;
+  border-width:5px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:10px;
+
+  /* centrado interno sin cambiar estructura */
+  display:flex; align-items:center; justify-content:center;
+  padding:10px;
+}
+
+/* navBar  */
+#navBar {
+  position:absolute;
+  left:50px;
+  top:200px;
+  width:1260px;
+  height:70px;
+  float: none;
+  background:inherit;
+  background-color: rgba(255,255,0);
+  box-sizing:border-box;
+  border-width:5px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:10px;
+  padding:8px 10px 0;
+
+  /* centrado interno */
+  display:flex; align-items:center; justify-content:center;
+}
+
+/* leftMenu  */
+#leftMenu {
+  position:absolute;
+  left:50px;
+  top:280px;
+  width:200px;
+  height:320px;
+  float: left;
+  background:inherit;
+  background-color: rgba(255, 255, 255);
+  box-sizing:border-box;
+  border-width:5px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:10px;
+
+  /* centrado del contenido */
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:12px;
+  padding:20px;
+}
+
+/* content */
+#content {
+  position:absolute;
+  left:270px;
+  top:280px;
+  width:600px;
+  height:320px;
+  float: left;
+  background:inherit;
+  background-color: rgba(51, 153, 51);
+  box-sizing:border-box;
+  border-width:5px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:10px;
+
+  /* centrado del texto */
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:8px;
+  padding:20px;
+  text-align:center;
+}
+
+/* rightMenu */
+#rightMenu {
+  position:absolute;
+  left:890px;
+  top:280px;
+  width:420px;
+  height:320px;
+  float: left;
+  background:inherit;
+  background-color: rgba(0, 0, 0);
+  box-sizing:border-box;
+  border-width:5px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:10px;
+
+  /* centrado del video */
+  display:flex; align-items:center; justify-content:center;
+  padding:10px;
+}
+
+/* footer  */
+#footer {
+  position:absolute;
+  left:50px;
+  top:620px;
+  width:1260px;
+  height:60px;
+  float: none;
+  background:inherit;
+  background-color: rgba(255,255,0);
+  box-sizing:border-box;
+  border-width:5px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:10px;
+
+  /* centrado del link */
+  display:flex; align-items:center; justify-content:center;
+  padding-top:10px;
+}
+
+/* =========================
+   AJUSTES FINOS PARA ARMONÍA
+   ========================= */
+
+/* Centrar el logo dentro del header (tu <img> tenía posiciones inline) */
+#header img{
+  position:absolute !important;
+  left:50% !important;
+  top:50% !important;
+  transform:translate(-50%,-50%) !important;
+  height:auto;
+  max-width:90%;
+}
+
+/* Enlaces del navbar centrados y hover sutil */
+#navBar table{ margin:0 auto; border-collapse:collapse; }
+#navBar td{ padding:0 22px; }
+#navBar a{
+  color:#000; text-decoration:none; font-weight:700;
+  padding:6px 10px; border-radius:8px;
+  transition: background-color .2s ease, box-shadow .2s ease;
+}
+#navBar a:hover{
+  background-color:rgba(0,0,0,.08);
+  box-shadow:0 4px 10px rgba(0,0,0,.12);
+}
+
+/* Video visible, centrado y con borde suave */
+#rightMenu iframe{
+  display:block;
+  width:390px; height:290px;   /* tus medidas originales */
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,.25);
+  margin:0 auto;
+}
+
+/* Footer: consistencia de hover con navbar */
+#footer a{
+  color:#000; text-decoration:none; font-weight:700;
+  padding:6px 12px; border-radius:8px;
+  transition: background-color .2s ease, box-shadow .2s ease;
+}
+#footer a:hover{
+  background-color:rgba(0,0,0,.08);
+  box-shadow:0 4px 10px rgba(0,0,0,.12);
+}
+
+/* Micro-sombra común (no mueve cajas ni cambia colores) */
+#header,#navBar,#leftMenu,#content,#rightMenu,#footer{
+  box-shadow:0 8px 18px rgba(0,0,0,.12);
+}
+
+/* Ajuste fino de párrafos dentro de .Texto */
+.Texto p{ margin:.25rem 0; }
+
+
+#rightMenu iframe {
+  pointer-events: none; /* evita clics y barras emergentes */
+}

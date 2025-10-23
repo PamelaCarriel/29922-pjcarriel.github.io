@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>LOGISTICA</title>
+     <link rel="stylesheet" href="css/styles.css">
+    <script>
+        // Función para mostrar/ocultar el formulario confidencial
+        function mostrarConfidencial() {
+            var tercero = document.getElementById('tercero');
+            var formConfidencial = document.getElementById('formConfidencial');
+            
+            if (tercero.checked) {
+                formConfidencial.style.display = 'block';
+            } else {
+                formConfidencial.style.display = 'none';
+            }
+        }
+
+        // Función para habilitar/deshabilitar el botón ENVIAR DATOS
+        function controlarBotonEnviar() {
+            var propietario = document.getElementById('propietario');
+            var btnEnviar = document.getElementById('btnEnviarDatos');
+            
+            if (propietario.checked) {
+                btnEnviar.disabled = false;
+            } else {
+                btnEnviar.disabled = true;
+            }
+        }
+
+        // Inicializar al cargar la página
+        window.onload = function() {
+            document.getElementById('formConfidencial').style.display = 'none';
+            document.getElementById('btnEnviarDatos').disabled = true;
+        }
+    </script>
+</head>
+<body>
+    <form action="./Script_PHP/registrar.php" method="POST" name="FormDireccion">
+        <fieldset>
+            <legend>DIRECCIÓN DE ENVIO</legend>
+            Calle Principal <br>
+            <input type="text" name="txtPrincipal" value="" required>
+            <br><br>
+            Transversal<br>
+            <input type="text" name="txtTransversal" value="" required>
+            
+            <br><br>
+            <input type="checkbox" id="propietario" name="chbEntrega1" value="PROPIETARIO" onchange="controlarBotonEnviar()"> Entrega al Propietario<br>
+            <input type="checkbox" id="tercero" name="chbEntrega2" value="TERCERO" onchange="mostrarConfidencial()"> Entrega a un Tercero
+
+            <br><br>
+            Cantones: <select name="cmbCantones">
+                <optgroup label="PICHINCHA">
+                    <option value="Q">Quito</option>
+                    <option value="R">Rumiñahui</option>
+                    <option value="M">Mejia</option>
+                </optgroup>
+                
+                <optgroup label="GUAYAS">
+                    <option value="G">Guayaquil</option>
+                    <option value="S">Santa Elena</option>
+                    <option value="SL">Salinas</option>
+                </optgroup>
+            </select>
+            
+            <br><br>
+            <input type="submit" id="btnEnviarDatos" name="SubmitDireccion" value="ENVIAR DATOS">
+        </fieldset>
+    </form>
+    
+    <br>
+    <div id="formConfidencial">
+        <form action="./Script_PHP/procesa.php" method="POST" name="FormConfidencial">
+            <fieldset>
+                <legend>INFORMACIÓN CONFIDENCIAL</legend>
+                Código Postal: 
+                <input type="password" name="pswCodigoPostal" value="" required>
+                
+                <br><br>
+                Referencia de la Dirección:<br>
+                <textarea name="Mensaje" rows="3" cols="30" id="Mensaje" required></textarea><br>
+                <br>
+                <input type="submit" name="SubmitConfidencial" value="PROCESAR">
+            </fieldset>
+        </form>
+    </div>
+    
+    <br><br>
+    <a href="../index.html">Regresar</a>
+</body>
+</html>

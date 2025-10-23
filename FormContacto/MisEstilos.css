@@ -1,0 +1,244 @@
+/* ====== RESET GENERAL ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ====== BODY ====== */
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ====== FORMULARIO ====== */
+form {
+  background: #fff;
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 35px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* ====== TÍTULO ====== */
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+/* ====== ETIQUETAS DE TEXTO ====== */
+p {
+  color: #444;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+/* ====== INPUTS ====== */
+input[type="text"],
+input[type="date"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+/* ====== EFECTOS FOCUS ====== */
+input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 8px rgba(102, 126, 234, 0.3);
+  outline: none;
+}
+
+/* ====== BOTÓN ====== */
+input[type="submit"] {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(102, 126, 234, 0.3);
+}
+
+input[type="submit"]:active {
+  transform: scale(0.97);
+}
+
+/* ====== PLACEHOLDER ICONOS ====== */
+input::placeholder {
+  color: #aaa;
+  font-size: 15px;
+}
+
+/* ====== ANIMACIÓN ====== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 600px) {
+  form {
+    padding: 30px 20px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+}
+/* ====== MENSAJES DE ERROR ====== */
+.mensaje-error {
+  color: #d93025;
+  font-size: 14px;
+  margin-top: -15px;
+  margin-bottom: 15px;
+  display: block;
+  font-weight: 500;
+  animation: aparecer 0.3s ease;
+}
+
+/* Pequeña animación al mostrar errores */
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(-3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-link a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+/* ====== MENSAJES DE ERROR ====== */
+.mensaje-error {
+  color: #d93025;
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  display: block;
+  font-weight: 500;
+  animation: aparecer 0.3s ease;
+}
+
+/* ====== ANIMACIÓN ====== */
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== BOTÓN REGRESAR ====== */
+.btn-regresar {
+  display: block;
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.btn-regresar:hover {
+  background: linear-gradient(135deg, #5b3f8e 0%, #5a6be3 100%);
+  box-shadow: 0 8px 15px rgba(102, 126, 234, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-regresar:active {
+  transform: scale(0.96);
+}
+/* ====== BOTÓN ENVIAR (MODERNO) ====== */
+#btnEnviar {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Brillo suave al pasar el cursor */
+#btnEnviar:hover {
+  box-shadow: 0 0 12px rgba(118, 75, 162, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Cuando se presiona */
+#btnEnviar:active {
+  transform: scale(0.97);
+}
+
+/* Estado "enviando" con animación */
+#btnEnviar.enviando {
+  background: linear-gradient(135deg, #5a6be3 0%, #5b3f8e 100%);
+  color: #eee;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Efecto animado tipo spinner */
+#btnEnviar.enviando::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  border-top-color: white;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  animation: girar 1s linear infinite;
+}
+
+/* Animación del spinner */
+@keyframes girar {
+  from { transform: translateY(-50%) rotate(0deg); }
+  to { transform: translateY(-50%) rotate(360deg); }
+}
