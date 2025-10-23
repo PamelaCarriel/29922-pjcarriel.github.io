@@ -1,93 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
-    <meta charset="utf-8">
-    <title>LOGISTICA</title>
-     <link rel="stylesheet" href="css/styles.css">
-    <script>
-        // Función para mostrar/ocultar el formulario confidencial
-        function mostrarConfidencial() {
-            var tercero = document.getElementById('tercero');
-            var formConfidencial = document.getElementById('formConfidencial');
-            
-            if (tercero.checked) {
-                formConfidencial.style.display = 'block';
-            } else {
-                formConfidencial.style.display = 'none';
-            }
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
-        // Función para habilitar/deshabilitar el botón ENVIAR DATOS
-        function controlarBotonEnviar() {
-            var propietario = document.getElementById('propietario');
-            var btnEnviar = document.getElementById('btnEnviarDatos');
-            
-            if (propietario.checked) {
-                btnEnviar.disabled = false;
-            } else {
-                btnEnviar.disabled = true;
-            }
-        }
+    <!-- Estilos Google -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Ubuntu" rel="stylesheet">
 
-        // Inicializar al cargar la página
-        window.onload = function() {
-            document.getElementById('formConfidencial').style.display = 'none';
-            document.getElementById('btnEnviarDatos').disabled = true;
-        }
-    </script>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <title>Formulario Login y Registro de Usuarios</title>
 </head>
-<body>
-    <form action="./Script_PHP/registrar.php" method="POST" name="FormDireccion">
-        <fieldset>
-            <legend>DIRECCIÓN DE ENVIO</legend>
-            Calle Principal <br>
-            <input type="text" name="txtPrincipal" value="" required>
-            <br><br>
-            Transversal<br>
-            <input type="text" name="txtTransversal" value="" required>
-            
-            <br><br>
-            <input type="checkbox" id="propietario" name="chbEntrega1" value="PROPIETARIO" onchange="controlarBotonEnviar()"> Entrega al Propietario<br>
-            <input type="checkbox" id="tercero" name="chbEntrega2" value="TERCERO" onchange="mostrarConfidencial()"> Entrega a un Tercero
 
-            <br><br>
-            Cantones: <select name="cmbCantones">
-                <optgroup label="PICHINCHA">
-                    <option value="Q">Quito</option>
-                    <option value="R">Rumiñahui</option>
-                    <option value="M">Mejia</option>
-                </optgroup>
-                
-                <optgroup label="GUAYAS">
-                    <option value="G">Guayaquil</option>
-                    <option value="S">Santa Elena</option>
-                    <option value="SL">Salinas</option>
-                </optgroup>
-            </select>
-            
-            <br><br>
-            <input type="submit" id="btnEnviarDatos" name="SubmitDireccion" value="ENVIAR DATOS">
-        </fieldset>
-    </form>
-    
-    <br>
-    <div id="formConfidencial">
-        <form action="./Script_PHP/procesa.php" method="POST" name="FormConfidencial">
-            <fieldset>
-                <legend>INFORMACIÓN CONFIDENCIAL</legend>
-                Código Postal: 
-                <input type="password" name="pswCodigoPostal" value="" required>
-                
-                <br><br>
-                Referencia de la Dirección:<br>
-                <textarea name="Mensaje" rows="3" cols="30" id="Mensaje" required></textarea><br>
-                <br>
-                <input type="submit" name="SubmitConfidencial" value="PROCESAR">
-            </fieldset>
-        </form>
+<body>
+    <div class="contenedor-formularios">
+        <!-- Links de los formularios -->
+        <ul class="contenedor-tabs">
+            <li class="tab tab-segunda active"><a href="#iniciar-sesion">Iniciar Sesión</a></li>
+            <li class="tab tab-primera" name="registrar"><a href="#registrarse">Registrarse</a></li>
+        </ul>
+
+        <!-- Contenido de los Formularios -->
+        <div class="contenido-tab">
+            <!-- Iniciar Sesion -->
+            <div id="iniciar-sesion">
+                <h1>Iniciar Sesión</h1>
+                <form name="FormaLogin" action="validar.php" method="post">
+                    <div class="contenedor-input">
+                        <label>
+                            Usuario <span class="req">*</span>
+                        </label>
+                        <input type="text" name="usuario" required>
+                    </div>
+
+                    <div class="contenedor-input">
+                        <label>
+                            Contraseña <span class="req">*</span>
+                        </label>
+                        <input type="password" name="clave" required>
+                    </div>
+                    <input type="submit" class="button button-block" value="Iniciar Sesión">
+                </form>
+            </div>
+
+            <!-- Registrarse -->
+            <div id="registrarse">
+                <h1>Registrarse</h1>
+                <form action="registrar.php" method="post">
+                    <div class="fila-arriba">
+                        <div class="contenedor-input">
+                            <label>
+                                Nombre <span class="req">*</span>
+                            </label>
+                            <input type="text" name="nom" required>
+                        </div>
+
+                        <div class="contenedor-input">
+                            <label>
+                                Apellido <span class="req">*</span>
+                            </label>
+                            <input type="text" name="ape" required>
+                        </div>
+                    </div>
+                    <div class="contenedor-input">
+                        <label>
+                            Usuario <span class="req">*</span>
+                        </label>
+                        <input type="text" name="usu" required>
+                    </div>
+                    <div class="contenedor-input">
+                        <label>
+                            Email <span class="req">*</span>
+                        </label>
+                        <input type="email" name="ema" required>
+                    </div>
+                    <div class="contenedor-input">
+                        <label>
+                            Contraseña <span class="req">*</span>
+                        </label>
+                        <input type="password" name="pas" required>
+                    </div>
+
+                    <div class="contenedor-input">
+                        <label>
+                            Telefono <span class="req">*</span>
+                        </label>
+                        <input type="text" name="tel" required>
+                    </div>
+
+                    <div class="contenedor-input">
+                        <label>
+                            Empresa <span class="req">*</span>
+                        </label>
+                        <input type="text" name="empre" required>
+                    </div>
+                    <div class="contenedor-input">
+                        <label>
+                            <span class="req"></span>
+                        </label>
+                        <input type="date" name="fech" required>
+                    </div>
+
+                    <input type="submit" class="button button-block" value="Registrarse">
+                </form>
+            </div>
+        </div>
     </div>
-    
-    <br><br>
-    <a href="../index.html">Regresar</a>
+    <div class="contenedor-regresar">
+        <button class="btn-regresar" onclick="window.location.href='../index.html'">
+            ⬅ Regresar al Inicio
+        </button>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/enviar.js"></script>
+
 </body>
+
 </html>

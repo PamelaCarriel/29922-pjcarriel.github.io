@@ -94,7 +94,6 @@ label {
   -webkit-transition: all 0.25s ease;
   -o-transition: all 0.25s ease;
   transition: all 0.25s ease;
-  -webkit-backface-visibility: hidden;
   pointer-events: none;
   font-size: 22px;
 }
@@ -178,7 +177,6 @@ input:focus {
   -webkit-transition: all .5s ease;
   -o-transition: all .5s ease;
   transition: all .5s ease;
-  -webkit-appearance: none;
 }
 
 .button:hover, .button:focus {
@@ -209,4 +207,33 @@ input:focus {
   .contenedor-tabs li a {
     width: 100%;
   }
+}
+
+/* ===== BOTÓN REGRESAR AL INICIO ===== */
+.contenedor-regresar {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.btn-regresar {
+  background: linear-gradient(135deg, #66ea8e 0%, #4ba257 100%);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 25px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.btn-regresar:hover {
+  background: linear-gradient(135deg, #5a6be3 0%, #5b3f8e 100%);
+  box-shadow: 0 8px 18px rgba(118, 75, 162, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-regresar:active {
+  transform: scale(0.97);
 }
